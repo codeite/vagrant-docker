@@ -1,0 +1,15 @@
+elasticsearch:
+  image: elasticsearch:1.7.5
+  ports:
+   - "9200:9200"
+   - "9300:9300"
+#  volumes:
+#   - ./config:/usr/share/elasticsearch/config
+rabbitmq:
+  image: rabbitmq:3-management
+  ports:
+    - "5672:5672"
+    - "15672:15672"
+  environment:
+    HOSTNAME: "rabbitmq"
+    RABBITMQ_NODENAME: "rabbitmq"
